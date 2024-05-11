@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibliotaku</title>
+    
+    <!-- <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon"> -->
+    <link rel="stylesheet" href=" {{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href=" {{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1 class="fw-bold mb-4 text-center mx-1">{{title}}</h1>
+    <div>
+        {% for text in content %}
+            <p class="mx-5">{{text}}</p>
+        {% endfor %}
+    </div>
+
+    <div class="d-flex justify-content-evenly m-5">
+        <a href="{{ url_for('change', recv_url=prev )}}" class="btn btn-primary">Anterior</a>
+        <a href="{{ url_for('change', recv_url=next )}}" class="btn btn-primary">Siguiente</a>
+    </div>
+</body>
+</html>
